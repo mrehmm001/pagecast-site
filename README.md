@@ -33,11 +33,15 @@ Every video was produced by PageCast itself, unedited:
 | `example-concorde.mp4` | en.wikipedia.org/wiki/Concorde | complete, 1:32 |
 | `example-antikythera.mp4` | en.wikipedia.org/wiki/Antikythera_mechanism | complete, 1:19 |
 | `example-esp32.mp4` | ESP32 PWM tutorial page | 40 s from the middle of 5:35 |
-| `demo-editor.mp4`, `demo-modal.mp4` | — | screen recordings of the extension |
+| `demo-editor.mp4`, `demo-modal.mp4` | — | screen recordings of the extension, made from the `landing-ui` branch |
 
 The `.vtt` caption files are the `.srt` files PageCast writes next to each video.
 
-Re-record the interface clips with `node tools/record-demo.cjs` (needs
+The interface clips are recorded from the **`landing-ui`** branch, which strips
+the controls that only make sense on a local build (the Claude/Ollama engine
+switch, "Show in folder", the saved-to-disk path) and keeps a single Model
+dropdown. Check that branch out first, then re-record the clips with
+`node tools/record-demo.cjs` (needs
 `node tools/devserver.js` running), then re-encode with the ffmpeg commands in the
 project history. The Wikipedia examples carry CC-licensed imagery. The ESP32 one is from a
 third-party tutorial site and is the last example that isn't either Wikipedia or
