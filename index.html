@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PageCast — the page you're reading, as a narrated video</title>
-<meta name="description" content="A browser extension that turns the page you're reading into a narrated slideshow video. It cuts the ads and menus, writes the script, and renders on your own machine.">
+<meta name="description" content="A browser extension that turns the page you're reading into a narrated slideshow video. It cuts the ads and menus, writes the script, and sends back a narrated video.">
 <meta property="og:title" content="PageCast — the page you're reading, as a narrated video">
-<meta property="og:description" content="Cuts the ads and menus, writes the script, renders on your own machine.">
+<meta property="og:description" content="Cuts the ads and menus, writes the script, sends back a narrated video.">
 <meta property="og:image" content="media/poster-hovercraft.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="media/icon.png">
@@ -34,12 +34,12 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <h1>Stop reading it.<br>Watch it instead.</h1>
-        <p class="lede">PageCast takes the page on your screen — including the ones behind a login — throws away everything that isn't the article, writes a script, and renders a narrated video on your own machine.</p>
+        <p class="lede">PageCast takes the page on your screen — including the ones behind a login — throws away everything that isn't the article, writes a script, and sends back a narrated video a couple of minutes later.</p>
         <form class="signup" id="signup" data-endpoint="" data-contact="">
           <label for="email">Email</label>
           <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@work.com" spellcheck="false">
           <button class="btn primary" type="submit">Get early access</button>
-          <p class="note" id="signupNote" role="status">Windows, in Chrome or Brave. Your reading never leaves the machine unless you point it at a hosted model.</p>
+          <p class="note" id="signupNote" role="status">Chrome or Brave. The extension reads the page in your browser, so pages behind a login work, and sends what it finds to our renderer.</p>
         </form>
       </div>
 
@@ -134,7 +134,7 @@
     <div class="wrap split">
       <h2>It opens over<br>what you were reading.</h2>
       <div class="split-body">
-        <p class="lede">No tab to hunt for, no download to find. The video plays on the page it came from, with subtitles, and saves to your Videos folder as an MP4.</p>
+        <p class="lede">No tab to hunt for, no download to find. The video plays on the page it came from, with subtitles, and the MP4 is yours to download whenever you want it.</p>
         <figure class="plain">
           <video src="media/demo-modal.mp4" poster="media/poster-modal.jpg" playsinline muted loop preload="none" controls></video>
         </figure>
@@ -177,13 +177,13 @@
   <!-- ══════════════════════════════════ how it runs -->
   <section class="film" id="runs">
     <div class="wrap split">
-      <h2>Where the work<br>happens is yours.</h2>
+      <h2>What happens<br>when you hit render.</h2>
       <div class="split-body">
         <dl class="points two">
-          <div><dt>Your Claude subscription</dt><dd>The extension talks to the Claude CLI already on your machine. No API key, no per-video charge from us.</dd></div>
-          <div><dt>Or nothing leaves the room</dt><dd>Point it at a local model through Ollama and use the on-device voice. Filtering, writing, narration and rendering all run offline.</dd></div>
-          <div><dt>Rendered on your own hardware</dt><dd>Your browser draws the slides, ffmpeg assembles the video. A one-minute film takes about three minutes.</dd></div>
-          <div><dt>Honest about the state of it</dt><dd>Today it is Windows-only and installs by script. That is the part we're fixing first, and what early access is for.</dd></div>
+          <div><dt>Your browser does the reading</dt><dd>It reads the page you are already signed in to. A server fetching the same address gets a login wall, a cookie prompt, or a different page altogether.</dd></div>
+          <div><dt>We do the rest</dt><dd>Filtering, script, voice, slides and encoding all run on our machines. Nothing to install, nothing to configure, and your laptop fan stays where it is.</dd></div>
+          <div><dt>What travels, and what doesn’t</dt><dd>The text and pictures from the page you asked about, and nothing else. No other tabs, no browsing history, no background collection.</dd></div>
+          <div><dt>Honest about the state of it</dt><dd>What exists today is a build that runs on one machine. The hosted version is what early access opens, and testers shape what it does first.</dd></div>
         </dl>
       </div>
     </div>
