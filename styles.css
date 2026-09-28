@@ -29,7 +29,7 @@
 
   --sans: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
   --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
-  color-scheme: light;
+  color-scheme: only light; /* opt out of browser "force dark mode", which inverted the artwork */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -111,10 +111,9 @@ h2.wide { max-width: 20ch; }
 .blk.bar { display: flex; gap: .3rem; background: none; padding: .1rem .2rem; }
 .blk.bar i { width: .4rem; height: .4rem; border-radius: 50%; background: var(--rule); }
 .blk.strip, .blk.foot, .blk.related { background: none; border-block: 1px solid var(--rule); border-radius: 0; font-size: .57rem; }
-.blk.ad { background: repeating-linear-gradient(45deg, #e9ecee 0 6px, #e2e6e9 6px 12px); text-align: center; padding-block: .8rem; letter-spacing: .04em; }
-.blk.ad.small { padding-block: .5rem; }
-.blk.news { background: #e4eaf1; text-align: center; padding-block: .55rem; }
-.blk.head { background: none; font-size: 1rem; font-weight: 800; line-height: 1.04; color: var(--ink); letter-spacing: -.025em; padding-inline: .1rem; }
+.blk.appeal { background: #f6ece1; border: 1px solid #e3cdb4; text-align: center; padding-block: .75rem; letter-spacing: .01em; }
+.blk.toc { background: #eaeef2; border: 1px solid var(--rule); font-size: .58rem; padding-block: .5rem; }
+.blk.head { background: none; font-size: 1.15rem; font-weight: 800; line-height: 1.04; color: var(--ink); letter-spacing: -.025em; padding-inline: .1rem; }
 .blk.byline { background: none; padding-inline: .1rem; font-size: .55rem; }
 .blk.photo { flex: 1 1 4.5rem; min-height: 3rem; background: linear-gradient(145deg, #c9d2d8, #aab6bf 60%, #9aa7b1); border-radius: 2px; }
 .blk.para { background: none; padding-inline: .1rem; min-height: 2.5rem;
