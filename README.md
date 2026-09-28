@@ -28,8 +28,8 @@ Every video was produced by PageCast itself, unedited:
 | File | Source page | Notes |
 |---|---|---|
 | `hovercraft.mp4` | en.wikipedia.org/wiki/Hovercraft | complete, 1:10, with subtitles |
-| `example-news.mp4` | The Independent, parenting orders | complete, 1:15 |
-| `example-verdict.mp4` | Stratasys v Bambu Lab news article | first 40 s of 5:49 |
+| `example-concorde.mp4` | en.wikipedia.org/wiki/Concorde | complete, 1:32 |
+| `example-antikythera.mp4` | en.wikipedia.org/wiki/Antikythera_mechanism | complete, 1:19 |
 | `example-esp32.mp4` | ESP32 PWM tutorial page | 40 s from the middle of 5:35 |
 | `demo-editor.mp4`, `demo-modal.mp4` | — | screen recordings of the extension |
 
@@ -37,6 +37,6 @@ The `.vtt` caption files are the `.srt` files PageCast writes next to each video
 
 Re-record the interface clips with `node tools/record-demo.cjs` (needs
 `node tools/devserver.js` running), then re-encode with the ffmpeg commands in the
-project history. Third-party images inside these videos belong to their sources;
-Wikipedia's are CC-licensed, the news images are not — worth swapping the news
-examples for your own content before any wide promotion.
+project history. The Wikipedia examples carry CC-licensed imagery. The ESP32 one is from a
+third-party tutorial site and is the last example that isn't either Wikipedia or
+your own content.
