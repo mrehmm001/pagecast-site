@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PageCast — the page you're reading, as a narrated video</title>
+<meta name="description" content="A browser extension that turns the page you're reading into a narrated slideshow video. It cuts the ads and menus, writes the script, and renders on your own machine.">
+<meta property="og:title" content="PageCast — the page you're reading, as a narrated video">
+<meta property="og:description" content="Cuts the ads and menus, writes the script, renders on your own machine.">
+<meta property="og:image" content="media/poster-hovercraft.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="media/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="#top"><img src="media/icon.png" alt="" width="28" height="28">PageCast</a>
+  <nav>
+    <a href="#cut">The cut</a>
+    <a href="#storyboard">Storyboard</a>
+    <a href="#examples">Examples</a>
+    <a class="pill" href="#access">Early access</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ══════════════════════════════════ hero: the page becomes the video -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Stop reading it.<br>Watch it instead.</h1>
+        <p class="lede">PageCast takes the page on your screen — including the ones behind a login — throws away everything that isn't the article, writes a script, and renders a narrated video on your own machine.</p>
+        <form class="signup" id="signup" data-endpoint="" data-contact="">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@work.com" spellcheck="false">
+          <button class="btn primary" type="submit">Get early access</button>
+          <p class="note" id="signupNote" role="status">Windows, in Chrome or Brave. Your reading never leaves the machine unless you point it at a hosted model.</p>
+        </form>
+      </div>
+
+      <div class="stage" id="stage">
+        <!-- a diagram of a page being cut down; not a screenshot of any real site -->
+        <div class="sheet" id="sheet" aria-hidden="true">
+          <div class="blk bar" data-fate="cut"><i></i><i></i><i></i></div>
+          <div class="blk strip" data-fate="cut">Sections · Politics · Sport · Culture</div>
+          <div class="blk ad" data-fate="cut">Advertisement</div>
+          <div class="blk head" data-fate="keep">Parents face fines for their children's crimes</div>
+          <div class="blk byline" data-fate="keep">By a staff reporter · Saturday</div>
+          <div class="blk photo" data-fate="keep"></div>
+          <div class="blk para" data-fate="keep"></div>
+          <div class="blk news" data-fate="cut">Sign up to our newsletter</div>
+          <div class="blk para short" data-fate="keep"></div>
+          <div class="blk related" data-fate="cut">Most popular · Trending · More from us</div>
+          <div class="blk ad small" data-fate="cut">Advertisement</div>
+          <div class="blk foot" data-fate="cut">Contact · Terms · Cookies</div>
+        </div>
+
+        <figure class="screen" id="screen">
+          <video id="heroVideo" src="media/hovercraft.mp4" poster="media/poster-hovercraft.jpg" playsinline muted loop preload="metadata">
+            <track kind="captions" src="media/hovercraft.vtt" srclang="en" label="English">
+          </video>
+          <button type="button" id="soundBtn" class="btn sound" aria-pressed="false">Sound on</button>
+        </figure>
+      </div>
+    </div>
+
+    <p class="provenance wrap">
+      <span>The video above was made from <a href="https://en.wikipedia.org/wiki/Hovercraft" rel="noopener">en.wikipedia.org/wiki/Hovercraft</a></span>
+      <span>6 slides</span><span>1:10</span><span>page to MP4 in 3 min 20 s</span>
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════ the cut -->
+  <section class="cut-section" id="cut">
+    <div class="wrap">
+      <div class="cut-head">
+        <h2>It works out what the page is actually about.</h2>
+        <p class="lede">Every block and image goes to the model with its position, its class names and where its links point. Nothing is removed by a keyword rule, so a figure in the sidebar survives and an ad inside the article does not.</p>
+      </div>
+
+      <div class="ledger">
+        <div class="side keep">
+          <p class="count">20</p>
+          <p class="side-label">kept from one news article</p>
+          <ul>
+            <li>The headline and standfirst</li>
+            <li>All fifteen paragraphs of the story</li>
+            <li>Byline and dateline</li>
+            <li>The hero photograph</li>
+          </ul>
+        </div>
+        <div class="side cut">
+          <p class="count">56</p>
+          <p class="side-label">removed, each with a reason</p>
+          <ul class="reasons">
+            <li><b>19</b><s>Most popular, Popular videos, Bulletin</s><em>related story lists</em></li>
+            <li><b>11</b><s>Ad: Boden's British Classics collection…</s><em>labelled advertisement</em></li>
+            <li><b>9</b><s>UK Edition, US Edition, Asia Edition…</s><em>edition and section menus</em></li>
+            <li><b>5</b><s>Stay on top of the latest political news…</s><em>newsletter signup</em></li>
+            <li><b>3</b><s>Join our commenting forum</s><em>comments prompt</em></li>
+            <li><b>9</b><s>Cookie dialog, share bar, login, footer</s><em>page furniture</em></li>
+          </ul>
+        </div>
+      </div>
+      <p class="aside">Every removal keeps the model's own reason, listed beside you while you edit. Tick one back and the storyboard is rewritten to include it.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ into the dark: storyboard -->
+  <section class="film first" id="storyboard">
+    <div class="wrap">
+      <figure class="bridge">
+        <video src="media/demo-editor.mp4" poster="media/poster-editor.jpg" playsinline muted loop preload="none" controls></video>
+      </figure>
+      <div class="split">
+        <h2>Nothing renders<br>until you've seen it.</h2>
+        <div class="split-body">
+          <p class="lede">The model drafts the slides and the narration. You get them as an editable storyboard, with a live preview of the finished frame beside every field.</p>
+          <dl class="points">
+            <div><dt>Twelve layouts</dt><dd>Bullets, a pull quote, a big number, two columns, full-bleed photo. Change one and the preview redraws as you type.</dd></div>
+            <div><dt>The page's own pictures</dt><dd>Pick from everything the page had, at the largest size it offers. Nothing is generated, nothing is stock.</dd></div>
+            <div><dt>Narration you can rewrite</dt><dd>Each slide shows its word count and how long it takes to speak, so you can hit a length exactly.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ delivery -->
+  <section class="film" id="delivery">
+    <div class="wrap split">
+      <h2>It opens over<br>what you were reading.</h2>
+      <div class="split-body">
+        <p class="lede">No tab to hunt for, no download to find. The video plays on the page it came from, with subtitles, and saves to your Videos folder as an MP4.</p>
+        <figure class="plain">
+          <video src="media/demo-modal.mp4" poster="media/poster-modal.jpg" playsinline muted loop preload="none" controls></video>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ examples -->
+  <section class="film" id="examples">
+    <div class="wrap">
+      <h2 class="wide">Four pages, four videos, nothing touched up.</h2>
+      <p class="lede">Each came straight out of the tool. They have sound.</p>
+      <div class="gallery">
+        <figure>
+          <video src="media/example-verdict.mp4" poster="media/poster-verdict.jpg" playsinline preload="none" controls>
+            <track kind="captions" src="media/example-verdict.vtt" srclang="en" label="English">
+          </video>
+          <figcaption><b>Stratasys v Bambu Lab</b><span>news article · 5:49 · first 40 s</span></figcaption>
+        </figure>
+        <figure>
+          <video src="media/example-esp32.mp4" poster="media/poster-esp32.jpg" playsinline preload="none" controls></video>
+          <figcaption><b>ESP32 PWM with the Arduino IDE</b><span>tutorial page · 5:35 · 40 s from the middle</span></figcaption>
+        </figure>
+        <figure>
+          <video src="media/example-news.mp4" poster="media/poster-news.jpg" playsinline preload="none" controls>
+            <track kind="captions" src="media/example-news.vtt" srclang="en" label="English">
+          </video>
+          <figcaption><b>Parenting orders and youth crime</b><span>news article · 1:15 · complete</span></figcaption>
+        </figure>
+        <figure>
+          <video src="media/hovercraft.mp4" poster="media/poster-hovercraft.jpg" playsinline preload="none" controls>
+            <track kind="captions" src="media/hovercraft.vtt" srclang="en" label="English">
+          </video>
+          <figcaption><b>Hovercraft</b><span>Wikipedia · 1:10 · complete</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ how it runs -->
+  <section class="film" id="runs">
+    <div class="wrap split">
+      <h2>Where the work<br>happens is yours.</h2>
+      <div class="split-body">
+        <dl class="points two">
+          <div><dt>Your Claude subscription</dt><dd>The extension talks to the Claude CLI already on your machine. No API key, no per-video charge from us.</dd></div>
+          <div><dt>Or nothing leaves the room</dt><dd>Point it at a local model through Ollama and use the on-device voice. Filtering, writing, narration and rendering all run offline.</dd></div>
+          <div><dt>Rendered on your own hardware</dt><dd>Your browser draws the slides, ffmpeg assembles the video. A one-minute film takes about three minutes.</dd></div>
+          <div><dt>Honest about the state of it</dt><dd>Today it is Windows-only and installs by script. That is the part we're fixing first, and what early access is for.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ access -->
+  <section class="film close" id="access">
+    <div class="wrap">
+      <h2 class="wide">Tell us what you'd point it at.</h2>
+      <p class="lede">We want a handful of people who read more than they have time for: researchers, engineers working through documentation, anyone who summarises the web for everyone else.</p>
+      <form class="signup" data-endpoint="" data-contact="">
+        <label for="email2">Email</label>
+        <input id="email2" name="email" type="email" required autocomplete="email" placeholder="you@work.com" spellcheck="false">
+        <button class="btn primary" type="submit">Get early access</button>
+        <p class="note" role="status">One email, when there's something to install. Nothing else.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Every video here was produced by PageCast from the page named, with no edits afterwards. The illustration at the top is a diagram, not a real site.</p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
