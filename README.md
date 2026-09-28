@@ -1,5 +1,7 @@
 # PageCast landing page
 
+Live at https://pagecast.muneebrehman.co.uk
+
 A static page: `index.html`, `styles.css`, `site.js` and `media/`. No build step,
 no dependencies beyond two Google webfonts (Bricolage Grotesque for display,
 Newsreader for body text). Drop the folder on any static host (GitHub Pages,
