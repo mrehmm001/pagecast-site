@@ -236,6 +236,24 @@ h2.wide { max-width: 20ch; }
 .gallery figcaption b { font-weight: 600; }
 .gallery figcaption span { color: var(--bone-soft); font-variant-numeric: tabular-nums; }
 
+/* ── install ──────────────────────────────────────────────── */
+.invited { margin: .95rem 0 0; font-family: var(--sans); font-size: .9rem; font-weight: 500; color: var(--ink-soft); }
+.invited a { color: var(--ember); font-weight: 700; text-underline-offset: 3px; }
+.install-grid { display: grid; grid-template-columns: minmax(15rem, auto) 1fr; gap: clamp(1.6rem, 4vw, 3.6rem); align-items: start; margin-top: clamp(1.8rem, 3.4vw, 2.6rem); }
+.download .btn { display: inline-block; text-decoration: none; }
+.install .note { font-family: var(--sans); font-size: .84rem; font-weight: 500; color: var(--bone-soft); margin: .7rem 0 0; max-width: 60ch; }
+.install > .wrap > .note { margin-top: clamp(1.8rem, 3vw, 2.4rem); }
+.steps { margin: 0; padding: 0; list-style: none; counter-reset: step; display: grid; gap: 1.05rem; max-width: 62ch; }
+.steps li { counter-increment: step; position: relative; padding-left: 2.7rem; color: var(--bone-soft); line-height: 1.55; }
+.steps li::before {
+  content: counter(step); position: absolute; left: 0; top: -.05rem; width: 1.85rem; height: 1.85rem;
+  display: grid; place-items: center; border: 1px solid var(--film-rule); border-radius: 50%;
+  font-family: var(--sans); font-weight: 700; font-size: .9rem; color: var(--ember);
+}
+.steps b { color: var(--bone); font-weight: 600; }
+.install code { font-family: ui-monospace, Consolas, 'Courier New', monospace; font-size: .88em; background: var(--film-soft); color: var(--bone); padding: .08rem .38rem; border-radius: 2px; white-space: nowrap; }
+@media (max-width: 760px) { .install-grid { grid-template-columns: 1fr; } }
+
 /* ── close and footer ─────────────────────────────────────── */
 .film.close { padding-block: clamp(4rem, 8vw, 7rem); }
 .film.close .lede { max-width: 44ch; }
