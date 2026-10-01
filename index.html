@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PageCast — the page you're reading, as a narrated video</title>
-<meta name="description" content="A browser extension that turns the page you're reading into a narrated slideshow video. It cuts the ads and menus, writes the script, and sends back a narrated video.">
+<meta name="description" content="A browser extension that turns the page you're reading into a narrated slideshow video. It cuts the ads and menus, writes the script, and plays it as a narrated video in seconds.">
 <meta property="og:title" content="PageCast — the page you're reading, as a narrated video">
-<meta property="og:description" content="Cuts the ads and menus, writes the script, sends back a narrated video.">
+<meta property="og:description" content="Cuts the ads and menus, writes the script, plays it as a narrated video in seconds.">
 <meta property="og:image" content="media/poster-hovercraft.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="media/icon.png">
@@ -35,12 +35,12 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <h1>Stop reading it.<br>Watch it instead.</h1>
-        <p class="lede">PageCast takes the page on your screen — including the ones behind a login — throws away everything that isn't the article, writes a script, and sends back a narrated video a couple of minutes later.</p>
+        <p class="lede">PageCast takes the page on your screen — including the ones behind a login — throws away everything that isn't the article, writes a script, and starts playing it as a narrated video in about ten seconds.</p>
         <form class="signup" id="signup" data-endpoint="" data-contact="">
           <label for="email">Email</label>
           <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@work.com" spellcheck="false">
           <button class="btn primary" type="submit">Get early access</button>
-          <p class="note" id="signupNote" role="status">Chrome or Brave. The extension reads the page in your browser, so pages behind a login work, and sends what it finds to our renderer.</p>
+          <p class="note" id="signupNote" role="status">Chrome or Brave. The extension reads the page in your browser, so pages behind a login work, and sends what it finds to our servers.</p>
         </form>
         <p class="skip">Or skip ahead: <a href="#install">download the extension</a></p>
       </div>
@@ -72,7 +72,7 @@
 
     <p class="provenance wrap">
       <span>The video above was made from <a href="https://en.wikipedia.org/wiki/Hovercraft" rel="noopener">en.wikipedia.org/wiki/Hovercraft</a></span>
-      <span>6 slides</span><span>1:10</span><span>page to MP4 in 3 min 20 s</span>
+      <span>6 slides</span><span>1:10</span><span>Play to first word in about 10 s</span>
     </p>
   </section>
 
@@ -118,7 +118,7 @@
         <video src="media/demo-editor.mp4" poster="media/poster-editor.jpg" playsinline muted loop preload="none" controls></video>
       </figure>
       <div class="split">
-        <h2>Nothing renders<br>until you've seen it.</h2>
+        <h2>Nothing plays<br>until you've seen it.</h2>
         <div class="split-body">
           <p class="lede">The model drafts the slides and the narration. You get them as an editable storyboard, with a live preview of the finished frame beside every field.</p>
           <dl class="points">
@@ -134,9 +134,9 @@
   <!-- ══════════════════════════════════ delivery -->
   <section class="film" id="delivery">
     <div class="wrap split">
-      <h2>It opens over<br>what you were reading.</h2>
+      <h2>It plays over<br>what you were reading.</h2>
       <div class="split-body">
-        <p class="lede">No tab to hunt for, no download to find. The video plays on the page it came from, with subtitles, and the MP4 is yours to download whenever you want it.</p>
+        <p class="lede">No tab to hunt for, and no waiting for a video file. It plays on the page it came from: subtitles light up word by word as they're spoken, and you can jump to any moment. Want a file to keep or post? Export it as an MP4.</p>
         <figure class="plain">
           <video src="media/demo-modal.mp4" poster="media/poster-modal.jpg" playsinline muted loop preload="none" controls></video>
         </figure>
@@ -179,11 +179,11 @@
   <!-- ══════════════════════════════════ how it runs -->
   <section class="film" id="runs">
     <div class="wrap split">
-      <h2>What happens<br>when you hit render.</h2>
+      <h2>What happens<br>when you hit Play.</h2>
       <div class="split-body">
         <dl class="points two">
           <div><dt>Your browser does the reading</dt><dd>It reads the page you are already signed in to. A server fetching the same address gets a login wall, a cookie prompt, or a different page altogether.</dd></div>
-          <div><dt>We do the rest</dt><dd>Filtering, script, voice, slides and encoding all run on our machines. Nothing to install, nothing to configure, and your laptop fan stays where it is.</dd></div>
+          <div><dt>We do the heavy part</dt><dd>Filtering, the script and the voice run on our machines, every slide narrated at once, so the video starts before the rest is ready. Your browser just draws the slides. Nothing to install, nothing to configure.</dd></div>
           <div><dt>What travels, and what doesn’t</dt><dd>The text and pictures from the page you asked about, and nothing else. No other tabs, no browsing history, no background collection.</dd></div>
           <div><dt>Honest about the state of it</dt><dd>The hosted version is running for early testers, and what they point it at shapes what it does next.</dd></div>
         </dl>
@@ -213,7 +213,7 @@
       <div class="install-grid">
         <div class="download">
           <a class="btn primary" href="download/pagecast-extension.zip" download>Download the extension</a>
-          <p class="note">Version 0.2.0 · 277 KB · Chrome or Brave</p>
+          <p class="note">Version 0.3.0 · 290 KB · Chrome or Brave</p>
         </div>
         <ol class="steps">
           <li><b>Unzip it</b> into a folder you'll keep. That folder is the extension, so don't delete it afterwards.</li>
