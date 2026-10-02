@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy · PageCast</title>
+<meta name="description" content="What PageCast collects, why, who it shares it with and how long it keeps it.">
+<link rel="icon" href="media/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .legal { max-width: 70ch; padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+  .legal h1 { font-size: clamp(2.2rem, 1.4rem + 3vw, 3.4rem); }
+  .legal h2 { font-size: 1.45rem; margin-top: 2.4rem; }
+  .legal h3 { font-family: var(--sans); font-size: 1.05rem; margin: 1.6rem 0 .3rem; }
+  .legal p, .legal li { line-height: 1.65; }
+  .legal ul { padding-left: 1.2rem; }
+  .legal li + li { margin-top: .35rem; }
+  .legal table { width: 100%; border-collapse: collapse; font-size: .95rem; margin-top: .8rem; }
+  .legal th, .legal td { text-align: left; vertical-align: top; padding: .55rem .6rem .55rem 0; border-bottom: 1px solid var(--rule); }
+  .legal th { font-family: var(--sans); font-size: .85rem; color: var(--ink-soft); }
+  .legal .updated { color: var(--ink-soft); font-family: var(--sans); font-size: .9rem; }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <a class="wordmark" href="./"><img src="media/icon.png" alt="" width="28" height="28">PageCast</a>
+</header>
+<main class="wrap legal">
+  <h1>Privacy policy</h1>
+  <p class="updated">Last updated [DATE]</p>
+
+  <p>PageCast is a browser extension that turns the page you're reading into a narrated video. To do that, it has to send some of that page to our servers. This policy explains exactly what we collect, why, who else sees it and how long we keep it. We've tried to keep it short and plain.</p>
+
+  <h2>Who we are</h2>
+  <p>PageCast is run by [YOUR NAME OR BUSINESS NAME], based in the United Kingdom. We're the data controller for the personal data described here. You can reach us at [CONTACT EMAIL] about anything in this policy.</p>
+
+  <h2>The short version</h2>
+  <ul>
+    <li>PageCast only reads a page when you ask it to make a video of that page.</li>
+    <li>It sends the text of that page, and the images you keep, to our servers in London. Nothing from your other tabs, and no browsing history.</li>
+    <li>An AI service writes the script. We only use providers that agree not to keep or train on what we send.</li>
+    <li>Pages and working files are deleted after 7 days, and finished videos after 30.</li>
+    <li>We don't sell your data, show ads or use tracking cookies.</li>
+  </ul>
+
+  <h2>What we collect and why</h2>
+
+  <h3>Your account</h3>
+  <p>When you sign in, we hold your email address and an account ID. Your password is handled by Amazon Cognito, our sign-in service, and we never see it. We use these to let you sign in, keep your videos tied to you, and contact you about your account.</p>
+
+  <h3>The pages you turn into videos</h3>
+  <p>When you press <b>Create storyboard</b>, the extension reads the page in your current tab and sends us its text, its title and address, and the images you choose to keep. If you write guidance about what the video should focus on, we receive that too. We use all of this only to make your video. You'll see a notice explaining this, and you have to agree to it, before anything is sent for the first time.</p>
+  <p>Please don't use PageCast on pages with information you wouldn't want to share, such as online banking, health records or private email.</p>
+
+  <h3>Your videos</h3>
+  <p>We store the storyboard, the narration audio and any video you export, so you can play and download them.</p>
+
+  <h3>Usage and plan details</h3>
+  <p>We count how many minutes of narration you use each month and how many videos you start each day, and we record roughly what each video cost us to make. We use this to apply your plan's limits, to stop any one account from running up costs, and to understand how PageCast is used.</p>
+
+  <h3>Payments</h3>
+  <p>If you upgrade, Stripe handles the payment, through Link, which acts as the seller. Stripe collects your payment details and billing address under its own privacy policy. We never see your card number. Stripe tells us your customer and subscription IDs, which plan you're on, whether the subscription is active and when it renews.</p>
+
+  <h3>Feedback</h3>
+  <p>If you send us feedback, we keep what you wrote and who it came from so we can act on it and reply.</p>
+
+  <h3>Server logs</h3>
+  <p>Our servers log requests and errors, which can include your account ID, job IDs and the address of a page you used. We use logs to keep PageCast working and secure.</p>
+
+  <h3>On your own device</h3>
+  <p>The extension keeps your settings, your consent, and copies of recent storyboards and images in your browser's own storage, so a storyboard survives closing the tab. This stays on your device. Removing the extension removes it.</p>
+
+  <h2>Who else sees your data</h2>
+  <p>We use a small number of service providers. Each only gets what it needs for its part of the job.</p>
+  <table>
+    <thead><tr><th>Provider</th><th>What for</th><th>What they receive</th></tr></thead>
+    <tbody>
+      <tr><td>Amazon Web Services (London region)</td><td>Hosting, storage, sign-in</td><td>Everything described above, stored on our behalf</td></tr>
+      <tr><td>OpenRouter, and the AI model providers it routes to</td><td>Writing the video script</td><td>The page's text and images, and your guidance. We only allow providers that keep nothing (zero data retention) and don't train on it.</td></tr>
+      <tr><td>ElevenLabs</td><td>Premium voices</td><td>Only the narration script, and only if you choose a premium voice</td></tr>
+      <tr><td>Stripe and Link</td><td>Payments, tax and receipts</td><td>Your email address and payment details</td></tr>
+    </tbody>
+  </table>
+  <p>Standard voices are made on our own servers, so the narration isn't sent anywhere else for them. Some of these providers may process data outside the UK. Where they do, the transfer is covered by the safeguards in their terms with us. We'll also share data if the law requires it.</p>
+
+  <h2>How long we keep it</h2>
+  <ul>
+    <li>Pages, images and working files: 7 days, then deleted automatically.</li>
+    <li>Finished videos and the records of each job: 30 days.</li>
+    <li>Server logs: 30 days.</li>
+    <li>Daily and monthly usage counts: up to about 2 months.</li>
+    <li>Your account, plan and subscription details: while you have an account. If you ask us to delete your account, we remove them, apart from anything we must keep for tax or legal reasons.</li>
+  </ul>
+
+  <h2>Our legal basis</h2>
+  <p>Under UK data protection law, we use your data to provide the service you've asked for (performing our contract with you). We use usage records, logs and limits because we have a legitimate interest in keeping PageCast secure and affordable to run. We keep payment records because the law requires it.</p>
+
+  <h2>Your rights</h2>
+  <p>You can ask us for a copy of your data, ask us to correct it or delete it, object to how we use it, or ask us to restrict it. Email [CONTACT EMAIL] and we'll reply within a month. If you're not happy with how we've handled your data, you can complain to the Information Commissioner's Office at <a href="https://ico.org.uk/make-a-complaint/">ico.org.uk</a>.</p>
+
+  <h2>Our website</h2>
+  <p>This website is hosted on GitHub Pages and loads its fonts from Google Fonts, so GitHub and Google receive your IP address when you visit. We don't use analytics or tracking cookies here.</p>
+
+  <h2>Children</h2>
+  <p>PageCast isn't meant for children under 13, and we don't knowingly collect their data.</p>
+
+  <h2>Changes</h2>
+  <p>If we change what the extension sends or where it goes, we'll update this page and ask for your agreement again in the extension before anything else is sent.</p>
+</main>
+</body>
+</html>
