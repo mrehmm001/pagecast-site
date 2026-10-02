@@ -78,6 +78,30 @@ if ('IntersectionObserver' in window && !calm.matches) {
   for (const v of videos) if (v.loop) io.observe(v);
 }
 
+// Voice samples: one plays at a time, and pressing it again stops it.
+let voicePlaying = null;
+function stopVoice() {
+  if (!voicePlaying) return;
+  voicePlaying.audio.pause();
+  voicePlaying.button.setAttribute('aria-pressed', 'false');
+  voicePlaying = null;
+}
+for (const button of document.querySelectorAll('.voice')) {
+  button.addEventListener('click', () => {
+    const again = voicePlaying?.button === button;
+    stopVoice();
+    if (again) return;
+    for (const v of videos) if (!v.paused && !v.muted) v.pause();
+    const audio = new Audio(button.dataset.src);
+    voicePlaying = { audio, button };
+    button.setAttribute('aria-pressed', 'true');
+    audio.addEventListener('ended', stopVoice);
+    audio.addEventListener('error', stopVoice);
+    audio.play().catch(stopVoice);
+  });
+}
+for (const v of videos) v.addEventListener('play', () => { if (!v.muted) stopVoice(); });
+
 for (const form of document.querySelectorAll('.signup')) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
