@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Thanks for upgrading · PageCast</title>
+<link rel="icon" href="media/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="wordmark" href="./"><img src="media/icon.png" alt="" width="28" height="28">PageCast</a>
+</header>
+<main>
+  <section class="film close">
+    <div class="wrap">
+      <h1 class="wide" id="title" style="color:var(--bone)">You're upgraded.</h1>
+      <p class="lede" id="body">Thanks for subscribing. Your new plan is ready: open PageCast from your browser's toolbar and it shows your new minutes. You can close this tab.</p>
+      <p class="lede" style="font-size:.95rem">Your receipt comes by email from Link, which handles PageCast's payments. To change plan, update your card or cancel, open PageCast and choose <b>Manage plan</b>.</p>
+      <script>
+        // back from the billing page (Manage plan) rather than from paying
+        if (new URLSearchParams(location.search).has("manage")) {
+          document.title = "Your plan · PageCast";
+          document.getElementById("title").textContent = "All set.";
+          document.getElementById("body").textContent = "Any change you made to your plan reaches PageCast within a minute. You can close this tab.";
+        }
+      </script>
+    </div>
+  </section>
+</main>
+</body>
+</html>
