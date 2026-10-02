@@ -258,6 +258,26 @@ h2.wide { max-width: 20ch; }
 .gallery figcaption b { font-weight: 600; }
 .gallery figcaption span { color: var(--bone-soft); font-variant-numeric: tabular-nums; }
 
+/* ── pricing ──────────────────────────────────────────────── */
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.4vw, 1.6rem); margin-top: clamp(2rem, 4vw, 3rem); }
+@media (max-width: 860px) { .plans { grid-template-columns: 1fr; } }
+.plan { display: flex; flex-direction: column; gap: .9rem; min-width: 0; padding: clamp(1.3rem, 2.6vw, 1.8rem); background: var(--film-soft); border: 1px solid var(--film-rule); border-radius: 6px; }
+.plan.best { border-color: var(--ember); box-shadow: 0 0 0 1px var(--ember); }
+.plan h3 { margin: 0; font-family: var(--sans); display: flex; align-items: center; justify-content: space-between; gap: .6rem; flex-wrap: wrap; font-size: 1.35rem; font-weight: 800; letter-spacing: -.02em; color: var(--bone); }
+.plan .tag { font-family: var(--sans); font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ember); border: 1px solid var(--ember); border-radius: 999px; padding: .18rem .6rem; }
+.plan .price { margin: 0; display: flex; align-items: baseline; gap: .45rem; color: var(--bone); }
+.plan .price b { font-family: var(--sans); font-size: 2.6rem; font-weight: 800; letter-spacing: -.03em; line-height: 1; font-variant-numeric: tabular-nums; }
+.plan .price span { color: var(--bone-soft); font-size: .95rem; }
+.plan ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .55rem; color: var(--bone-soft); font-size: .98rem; flex: 1; }
+.plan li { padding-left: 1.4rem; position: relative; }
+.plan li::before { content: ''; position: absolute; left: 0; top: .5em; width: .55rem; height: .3rem; border-left: 2px solid var(--ember); border-bottom: 2px solid var(--ember); transform: rotate(-45deg); }
+.plan li b { color: var(--bone); font-weight: 600; }
+.plan li a { color: var(--bone); text-underline-offset: 3px; }
+.plan .btn { text-align: center; text-decoration: none; margin-top: .3rem; }
+.film .plan .btn:not(.primary) { border-color: var(--film-rule); color: var(--bone); }
+.film .plan .btn:not(.primary):hover { border-color: var(--bone); }
+.plans-note { font-family: var(--sans); font-size: .86rem; color: var(--bone-soft); margin: clamp(1.4rem, 3vw, 2rem) 0 0; max-width: 70ch; }
+
 /* ── install ──────────────────────────────────────────────── */
 .skip { margin: .95rem 0 0; font-family: var(--sans); font-size: .9rem; font-weight: 500; color: var(--ink-soft); }
 .skip a { color: var(--ember); font-weight: 700; text-underline-offset: 3px; }
