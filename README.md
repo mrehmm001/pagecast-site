@@ -1,6 +1,6 @@
 # PageCast landing page
 
-Live at https://pagecast.muneebrehman.co.uk
+Live at https://pagecast.santriq.com
 
 A static page: `index.html`, `styles.css`, `site.js` and `media/`. No build step,
 no dependencies beyond two Google webfonts (Bricolage Grotesque for display,
